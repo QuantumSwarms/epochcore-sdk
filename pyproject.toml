@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "epochcore-sdk"
+version = "0.0.1"
+description = "Public client SDK for the EpochCore platform — zero-latency single-API agent surface."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [
+  { name = "EpochCore LLC", email = "sdk@epochcoreqcs.com" },
+]
+keywords = ["epochcore", "dkap", "quantum", "ai-agents", "watsonx"]
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+  "httpx>=0.27",
+  "pydantic>=2.6",
+]
+
+[project.urls]
+Homepage = "https://github.com/QuantumSwarms/epochcore-sdk"
+Documentation = "https://github.com/QuantumSwarms/epochcore-docs"
+Issues = "https://github.com/QuantumSwarms/epochcore-sdk/issues"
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.4", "mypy>=1.10"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/epochcore_sdk"]
